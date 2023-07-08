@@ -77,6 +77,10 @@ export default {
       border-radius: 20px;
       overflow: hidden;
       height: 230px;
+
+      @media #{map-get($display-breakpoints, 'md-and-down')} {
+        height: 100%;
+      }
     }
   }
 
