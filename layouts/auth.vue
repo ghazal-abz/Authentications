@@ -1,7 +1,7 @@
 <template>
   <v-app class="main">
     <v-row class="auth-container" no-gutters>
-      <v-col cols="12" md="7" class="hero" :class="isForgetPass ? 'forget-pass' : 'log-in'">
+      <v-col cols="12" md="7" class="hero" :class="[isForgetPass ? 'forget-pass' : 'log-in', isRegister ? 'h-mobile': '']">
         <v-row class="img-container">
           <v-col cols="12" md="12">
             <div class="hero-main">
@@ -17,9 +17,9 @@
           </v-col>
           <v-col cols="12" md="12" class="page-link">
             <div class="page-link__box">
-              <span>{{ isLogIn || isForgetPass ? $t('auth.registerTitle') : $t('auth.loginTitle') }}</span>
-              <NuxtLink :to="isLogIn || isForgetPass ? '/register' : '/log-in'" class="link">
-                {{ isLogIn || isForgetPass ? $t('auth.registerLink') : $t('auth.loginLink') }}
+              <span>{{ isTwoLink ? $t('auth.registerTitle') : $t('auth.loginTitle') }}</span>
+              <NuxtLink :to="isTwoLink ? '/register' : '/log-in'" class="link">
+                {{ isTwoLink ? $t('auth.registerLink') : $t('auth.loginLink') }}
               </NuxtLink>
             </div>
           </v-col>
@@ -52,6 +52,16 @@ export default {
       const route = this.$route.name
 
       return ['forget-password'].includes(route)
+    },
+    isTwoLink() {
+      const route = this.$route.name
+
+      return ['forget-password','log-in'].includes(route)
+    },
+    isRegister() {
+      const route = this.$route.name
+
+      return ['register'].includes(route)
     }
   }
 }
@@ -113,6 +123,12 @@ export default {
       z-index: 1;
       justify-content: flex-end;
       align-items: flex-end;
+    }
+
+    &.h-mobile {
+      @media #{map-get($display-breakpoints, 'md-and-down')} {
+        height: 120vh !important;
+      }
     }
 
     &.log-in {
