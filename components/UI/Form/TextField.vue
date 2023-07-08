@@ -129,6 +129,7 @@ export default {
     .v-text-field__slot {
       input {
         text-align: left !important;
+        direction: ltr !important;
       }
     }
   }
@@ -152,6 +153,8 @@ export default {
         font-weight: 400;
         width: 100%;
         text-align: right;
+        width: 100%;
+        direction: rtl;
 
         &::-webkit-input-placeholder {
           color: #B5BBC3;
