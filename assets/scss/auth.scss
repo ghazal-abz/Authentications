@@ -1,0 +1,76 @@
+.auth-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: $white;
+  box-shadow: 0 2px 16px 0 rgba(48, 53, 59, 0.2);
+
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    max-width: calc(100% - 30px);
+    width: calc(100% - 30px);
+    margin: 30px auto;
+    padding: 24px 26px;
+    border-radius: 24px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #CDA876;
+
+    & h1 {
+      font-weight: 600;
+      font-size: 18px;
+      color: $secondary;
+      text-align: end;
+      position: relative;
+      line-height: 50px;
+
+      @media #{map-get($display-breakpoints, 'sm-and-down')} {
+        margin-bottom: 18px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__sub-title {
+    & h2 {
+      font-weight: 400;
+      font-size: 16px;
+      color: $text1;
+      text-align: end;
+      line-height: 30px;
+    }
+  }
+
+  .link {
+    cursor: pointer;
+    color: $primary;
+  }
+  .error-text {
+    color: red;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  &__text-info {
+    text-align: right;
+    margin-top: 10px;
+
+    & span {
+      color: $text1;
+      font-size: 16px;
+      text-align: right;
+      text-decoration: none;
+      font-weight: 400;
+      cursor: pointer;
+
+      @media #{map-get($display-breakpoints, 'sm-and-down')} {
+        margin-top: 10px;
+        font-size: 16px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
