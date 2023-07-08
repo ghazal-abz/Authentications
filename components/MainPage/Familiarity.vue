@@ -62,7 +62,7 @@ export default {
     justify-content: center;
     font-size: 16px;
     font-weight: 400;
-    margin: 15px;
+    margin-bottom: 10px;
 
     ::v-deep span {
       color: $primary;

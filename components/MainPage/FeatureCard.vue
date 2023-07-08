@@ -50,8 +50,8 @@ export default {
   border-radius: 10px 10px 0 10px;
 }
 .card-container {
-  padding: 5px;
-  max-width: 210px;
+  padding: 0 5px;
+  max-width: 200px;
 
   &.active {
     cursor: pointer;
@@ -78,7 +78,7 @@ export default {
   }
 
   &__bg {
-    height: 210px;
+    height: 190px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -15,7 +15,7 @@
           </t-btn>
         </v-col>
 
-        <v-col cols="12" class="pt-0">
+        <v-col cols="12" class="pa-0">
           <div>
             <h1 class="main__welcome">{{ $t('main.welcome') }}</h1>
           </div>
@@ -25,11 +25,11 @@
           <div class="main__second-quote">{{ $t('main.quote2') }}</div>
         </v-col>
 
-        <v-col cols="12" class="mt-2">
+        <v-col cols="12">
           <feature-card :data="cardItems" />
         </v-col>
 
-        <v-col cols="12" class="mt-1">
+        <v-col cols="12">
           <Familiarity />
         </v-col>
       </v-row>
@@ -89,8 +89,8 @@ export default {
   justify-content: center;
   background-color: white;
   border-radius: 16px;
-  padding: 35px;
-  height: 100%;
+  padding: 30px;
+  height: 95vh;
 
   &__btn {
     height: 30px;
@@ -133,7 +133,7 @@ export default {
     color: $text1;
     font-size: 16px;
     font-weight: 500;
-    margin-top: 15px;
+    margin-top: 10px;
 
     @media #{map-get($display-breakpoints, 'sm-and-down')} {
       margin-top: 30px;
@@ -146,7 +146,7 @@ export default {
     color: $text1;
     font-size: 20px;
     font-weight: 700;
-    margin-top: 15px;
+    margin-top: 10px;
 
     @media #{map-get($display-breakpoints, 'sm-and-down')} {
       margin-top: 20px;
