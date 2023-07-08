@@ -60,7 +60,7 @@
 import Validators from '~/utils/validators'
 import TBtn from '~/components/UI/TBtn'
 import TextField from '~/components/UI/Form/TextField'
-import CheckBox from '~/components/UI/CheckBox'
+import CheckBox from '@/components/UI/Form/CheckBox'
 
 export default {
   name: 'LogIn',
