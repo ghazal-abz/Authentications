@@ -13,9 +13,11 @@
         <template v-slot:activator="{ on, attrs }">
           <div class="card-container__bg bg-color" v-bind="attrs" v-on="item.status ? '': on">
             <i class="icon icon-50" :class="item.icon" />
+
             <h3>{{ item.title }}</h3>
           </div>
         </template>
+
         <span
           v-if="!item.status"
           v-html="$t('cards.soon')"

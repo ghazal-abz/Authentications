@@ -8,6 +8,7 @@
               <div class="d-flex align-center ml-4">
                 <v-img :src="logo" />
               </div>
+
               <div class="hero-text">
                 <h1>{{ $t('login.hero.title') }}</h1>
 
@@ -15,9 +16,11 @@
               </div>
             </div>
           </v-col>
+
           <v-col cols="12" md="12" class="page-link">
             <div class="page-link__box">
               <span>{{ isTwoLink ? $t('auth.registerTitle') : $t('auth.loginTitle') }}</span>
+
               <NuxtLink :to="isTwoLink ? '/register' : '/log-in'" class="link">
                 {{ isTwoLink ? $t('auth.registerLink') : $t('auth.loginLink') }}
               </NuxtLink>
@@ -43,11 +46,6 @@ export default {
     }
   },
   computed: {
-    isLogIn() {
-      const route = this.$route.name
-
-      return ['log-in'].includes(route)
-    },
     isForgetPass() {
       const route = this.$route.name
 

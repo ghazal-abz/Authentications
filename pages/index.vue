@@ -8,6 +8,7 @@
             <span class="mr-1">{{ $t('main.logIn') }}</span>
           </t-btn>
         </v-col>
+
         <v-col cols="6" class="main__cancel d-flex align-start justify-end pa-0">
           <t-btn class="button pa-0" to="/" text color="#000" :width="70" small>
             <span class="mr-1">{{ $t('main.cancel') }}</span>
@@ -18,7 +19,9 @@
           <div>
             <h1 class="main__welcome">{{ $t('main.welcome') }}</h1>
           </div>
+
           <div class="main__first-quote">{{ $t('main.quote') }}</div>
+
           <div class="main__second-quote">{{ $t('main.quote2') }}</div>
         </v-col>
 

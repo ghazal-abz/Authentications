@@ -3,7 +3,9 @@
     <div class="auth-card__title mb-5 d-flex justify-space-between align-center">
       <h1>{{ $t('register.title') }}</h1>
 
-      <i class="icon icon-left icon-24" />
+      <nuxt-link to="/">
+        <i class="icon icon-left icon-24" />
+      </nuxt-link>
     </div>
 
     <v-form ref="registerForm" @submit.prevent="register" autocomplete="off">
@@ -50,7 +52,7 @@
       />
 
       <span v-show="!isMatch" class="error-text">
-        {{$tc('auth.password')}}
+        {{ $tc('auth.password') }}
       </span>
 
       <text-field

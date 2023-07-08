@@ -1,6 +1,7 @@
 <template>
   <v-container id="familiarity" class="container pa-0">
     <h1 v-if="$vuetify.breakpoint.mdAndUp" class="video-title" v-html="$t('main.videoTitle')" />
+
     <h1 v-else class="video-title" v-html="$t('main.videoTitle2')" />
 
     <div class="video-container pa-0">
