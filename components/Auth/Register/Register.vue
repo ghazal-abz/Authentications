@@ -3,7 +3,7 @@
     <div class="auth-card__title mb-5 d-flex justify-space-between align-center">
       <h1>{{ $t('register.title') }}</h1>
 
-      <div @click="toLastLink">
+      <div @click="toLastLink" class="cursor-pointer">
         <i class="icon icon-left icon-24" />
       </div>
     </div>

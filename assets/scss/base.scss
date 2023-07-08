@@ -32,6 +32,10 @@ a {
   outline: none;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 ::-webkit-input-placeholder {
   color: $primary;
   font-weight: 500;
