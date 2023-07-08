@@ -1,83 +1,144 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+  <v-row justify="center" dir="rtl" class="main-wrap">
+    <v-col cols="12" class="main">
+      <v-row>
+        <v-col cols="6" class="main__btn d-flex justify-start pa-0">
+          <t-btn class="button pa-0" to="/log-in" text color="#CDA876" :width="180">
+            <i class="icon icon-24 icon-user mb-2" />
+            <span class="mr-1">{{ $t('main.logIn') }}</span>
+          </t-btn>
+        </v-col>
+        <v-col cols="6" class="main__cancel d-flex align-start justify-end py-0"> {{ $t('main.cancel') }}</v-col>
+
+        <v-col cols="12" class="pt-0">
+          <div>
+            <h1 class="main__welcome">{{ $t('main.welcome') }}</h1>
           </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+          <div class="main__first-quote">{{ $t('main.quote') }}</div>
+          <div class="main__second-quote">{{ $t('main.quote2') }}</div>
+        </v-col>
+
+        <v-col cols="12" class="mt-2">
+          <feature-card :data="cardItems" />
+        </v-col>
+
+        <v-col cols="12" class="mt-1">
+          <Familiarity />
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import TBtn from '~/components/UI/TBtn'
+import Familiarity from '~/components/MainPage/Familiarity'
+import FeatureCard from '~/components/MainPage/FeatureCard'
+
+
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components: {
+    TBtn,
+    Familiarity,
+    FeatureCard,
+  },
+  data() {
+    return {
+      cardItems: [
+        {
+          title: this.$i18n.t('cards.TradeDashboard'),
+          icon: 'icon-trade-dashboard',
+          status: true
+        },
+        {
+          title: this.$i18n.t('cards.IntelligentSignal'),
+          icon: 'icon-intelligent-signal',
+          status: true
+        },
+        {
+          title: this.$i18n.t('cards.RobotTrade'),
+          icon: 'icon-robot-trade',
+          status: true
+        },
+        {
+          title: this.$i18n.t('cards.CopyTrade'),
+          icon: 'icon-copy-trade',
+          status: false
+        }
+      ]
+    }
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+.main-wrap {
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 16px;
+  padding: 35px;
+  height: 100%;
+
+  &__btn {
+    height: 30px;
+
+    .button {
+      color: $primary !important;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+  &__cancel {
+    color: $text1;
+    font-weight: 600;
+    font-size: 18px;
+    height: 30px;
+  }
+
+  &__welcome {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #4CC1B0;
+
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      margin-top: 20px;
+    }
+  }
+
+  &__first-quote {
+    display: flex;
+    justify-content: center;
+    color: $text1;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      margin-top: 30px;
+    }
+  }
+
+  &__second-quote {
+    display: flex;
+    justify-content: center;
+    color: $text1;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      margin-top: 20px;
+    }
+  }
+
+}
+</style>
