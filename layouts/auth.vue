@@ -154,7 +154,7 @@ export default {
           font-size: 40px;
           font-weight: 700;
           line-height: 60px;
-          color: $yellow;
+          color: $darkYellow;
 
           @media #{map-get($display-breakpoints, 'sm-and-down')} {
             font-size: 26px;
