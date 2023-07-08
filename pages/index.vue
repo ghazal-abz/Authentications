@@ -3,12 +3,16 @@
     <v-col cols="12" class="main">
       <v-row>
         <v-col cols="6" class="main__btn d-flex justify-start pa-0">
-          <t-btn class="button pa-0" to="/log-in" text color="#CDA876" :width="180">
+          <t-btn class="button pa-0" to="/log-in" text color="#CDA876" :width="140" small>
             <i class="icon icon-24 icon-user mb-2" />
             <span class="mr-1">{{ $t('main.logIn') }}</span>
           </t-btn>
         </v-col>
-        <v-col cols="6" class="main__cancel d-flex align-start justify-end py-0"> {{ $t('main.cancel') }}</v-col>
+        <v-col cols="6" class="main__cancel d-flex align-start justify-end pa-0">
+          <t-btn class="button pa-0" to="/" text color="#000" :width="70" small>
+            <span class="mr-1">{{ $t('main.cancel') }}</span>
+          </t-btn>
+        </v-col>
 
         <v-col cols="12" class="pt-0">
           <div>
@@ -100,6 +104,12 @@ export default {
     font-weight: 600;
     font-size: 18px;
     height: 30px;
+
+    .button {
+      color: #000 !important;
+      font-weight: 600;
+      font-size: 18px;
+    }
   }
 
   &__welcome {

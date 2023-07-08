@@ -149,7 +149,7 @@ export default {
         background-color: $gray !important;
 
         .v-btn__content {
-          color: $white !important;
+          color: $white;
         }
       }
     }
