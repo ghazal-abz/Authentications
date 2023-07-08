@@ -9,10 +9,10 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - auth',
-    title: 'auth',
+    titleTemplate: '%s - test',
+    title: 'Authentications',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fa'
     },
     meta: [
       { charset: 'utf-8' },
@@ -21,12 +21,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/main-logo.svg' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~assets/scss/global.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -44,13 +45,28 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n'
   ],
 
+  i18n: {
+    lazy: true,
+    locales: [
+      {
+        name: 'Persian',
+        code: 'fa',
+        iso: 'fa-US',
+        file: 'fa-IR.js'
+      }
+    ],
+    langDir: 'locales/',
+    defaultLocale: 'fa',
+    strategy: 'no_prefix'
+  },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    rtl: true,
+    customVariables: ['~/assets/scss/variables.scss'],
     theme: {
-      dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
