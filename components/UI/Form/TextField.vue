@@ -153,7 +153,6 @@ export default {
         font-weight: 400;
         width: 100%;
         text-align: right;
-        width: 100%;
         direction: rtl;
 
         &::-webkit-input-placeholder {

@@ -3,9 +3,9 @@
     <div class="auth-card__title mb-5 d-flex justify-space-between align-center">
       <h1>{{ $t('register.title') }}</h1>
 
-      <nuxt-link to="/">
+      <div @click="toLastLink">
         <i class="icon icon-left icon-24" />
-      </nuxt-link>
+      </div>
     </div>
 
     <v-form ref="registerForm" @submit.prevent="register" autocomplete="off">
@@ -43,10 +43,11 @@
 
       <text-field
         v-model="confirmPassword"
-        autocomplete="off"
-        class="mt-2"
-        :rules="[rules.requiredRule, rules.password]"
+        :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+        :rules="[rules.required, rules.password]"
+        :type="show2 ? 'text' : 'password'"
         :title="$tc('register.confirmPassword')"
+        @click:append="show2 = !show2"
         hint-star
         text-left
       />
@@ -73,7 +74,7 @@
         </template>
       </check-box>
 
-      <t-btn class="main__btn" type="submit" block color="#CDA876" :disabled="!isMatch">
+      <t-btn class="main__btn" type="submit" block color="#CDA876" :disabled="isDisable">
         <span>{{ $t('register.submit') }}</span>
       </t-btn>
     </v-form>
@@ -106,6 +107,7 @@ export default {
       loading: false,
       remember: false,
       show1: true,
+      show2: true,
       rules: {
         requiredRule: Validators(this.$i18n).requiredRule,
         emailRule: Validators(this.$i18n).emailRule,
@@ -116,9 +118,15 @@ export default {
   computed: {
     isMatch() {
       return this.password === this.confirmPassword
+    },
+    isDisable() {
+      return !this.password || !this.confirmPassword || !this.username || !this.email
     }
   },
   methods: {
+    toLastLink() {
+      this.$router.go(-1);
+    },
     register() {
       if (this.$refs.registerForm.validate()) {
         this.loading = true
