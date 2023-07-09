@@ -58,7 +58,7 @@
 
 <script>
 import Validators from '~/utils/validators'
-import TBtn from '~/components/UI/TBtn'
+import TBtn from '@/components/UI/Form/TBtn'
 import TextField from '~/components/UI/Form/TextField'
 import CheckBox from '@/components/UI/Form/CheckBox'
 

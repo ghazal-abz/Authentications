@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import TBtn from '~/components/UI/TBtn'
+import TBtn from '@/components/UI/Form/TBtn'
 import Familiarity from '~/components/MainPage/Familiarity'
 import FeatureCard from '~/components/MainPage/FeatureCard'
 

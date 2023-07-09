@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import TBtn from '~/components/UI/TBtn'
+import TBtn from '@/components/UI/Form/TBtn'
 import Validators from "~/utils/validators";
 import TextField from '~/components/UI/Form/TextField'
 
