@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import VideoPlayer from '~/components/VideoPlayer'
+import VideoPlayer from '@/components/UI/VideoPlayer'
 
 export default {
   components: {VideoPlayer},

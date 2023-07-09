@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@vime/core/themes/default.css';
+@import '../../node_modules/@vime/core/themes/default.css';
 
 .video-player {
   position: relative;
