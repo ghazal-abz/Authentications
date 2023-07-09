@@ -92,6 +92,10 @@ export default {
   padding: 30px;
   height: calc(100vh - 45px);
 
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    height: 100%;
+  }
+
   &__btn {
     height: 30px;
 
@@ -150,6 +154,7 @@ export default {
 
     @media #{map-get($display-breakpoints, 'sm-and-down')} {
       margin-top: 20px;
+      margin-bottom: 10px;
     }
   }
 

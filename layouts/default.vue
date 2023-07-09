@@ -12,5 +12,8 @@
   background: linear-gradient(180deg, #1E9992 0%, #74E0C6 100%);
   padding: 35px 35px 10px 35px;
   height: 100vh;
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    height: 100%;
+  }
 }
 </style>

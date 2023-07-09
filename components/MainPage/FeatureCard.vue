@@ -53,6 +53,10 @@ export default {
   padding: 0 5px;
   max-width: 200px;
 
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    padding: 5px;
+  }
+
   &.active {
     cursor: pointer;
 
