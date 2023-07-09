@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import GetPassword from "~/components/Auth/ForgetPassword/GetPassword";
+import GetPassword from "@/components/Auth/ForgetPassword/GetEmail";
 import GetForgetPasswordCode from "~/components/Auth/ForgetPassword/GetForgetPasswordCode";
 import SetNewPassword from "~/components/Auth/ForgetPassword/SetNewPassword";
 

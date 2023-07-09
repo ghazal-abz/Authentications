@@ -31,7 +31,7 @@ import Validators from "~/utils/validators";
 import TextField from '~/components/UI/Form/TextField'
 
 export default {
-  name: 'GetPassword',
+  name: 'GetEmail',
   components: {
     TBtn,
     TextField
