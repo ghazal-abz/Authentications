@@ -90,7 +90,7 @@ export default {
   background-color: white;
   border-radius: 16px;
   padding: 30px;
-  height: 94vh;
+  height: calc(100vh - 45px);
 
   &__btn {
     height: 30px;
